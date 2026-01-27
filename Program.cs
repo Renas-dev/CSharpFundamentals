@@ -1,28 +1,17 @@
 ﻿using Helpers;
-Console.WriteLine("Hello, user when do u want to sleep?");
+// SleepTimeCalculations.RunMenu();
+// sorted array required for binary search
+int[] numbers = {1,2,3,4,6,7,8,13,123};
+//our target number to find in the tree
+int target = 11111;
+//initializing the binarySearch.cs method to find the target in numbers
+int index = BinarySearch.Find(numbers, target);
+if (index == -1)
+{
+    Console.WriteLine("Number not in index");
+    }
+else
+{
+        Console.WriteLine($"Number fount at index {index}");
+}
 
-string input;
-while (true){
-    Console.WriteLine("Enter 1 to see ur current best times to go to bed, 2 to choose when to go to bed, 3 to choose when to wake up");
-    input = Console.ReadLine();
-    
-if (input == "1")
-{
-    SleepNowCalculations.SleepNowCalculation();
-}
-if (input == "2")
-{
-    Console.WriteLine("Enter your desired time to wake up at:");
-    string userTime = Console.ReadLine();
-    WakeUpAtCalculations.WakeUp(userTime);
-}
-if (input == "3")
-{
-    Console.WriteLine("Enter your desired time, when u go to bed");
-    string userTime = Console.ReadLine();
-    SleepAtCalculations.SleepAt(userTime);
-} else
-{
-    Console.WriteLine("please type in either 1, 2 or 3");
-}
-}

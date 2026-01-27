@@ -6,13 +6,32 @@ namespace Helpers
         {
             return DateTime.Now.ToString("HH:mm");
         }
-    }
 
-    public static class Meower
-    {
-        public static void Meow()
+        public static void RunMenu()
         {
-            Console.WriteLine("meow");
+            Console.WriteLine("Enter 1 to see ur current best times to go to bed, 2 to choose when to go to bed, 3 to choose when to wake up");
+            while(true)
+            {
+                string? input = Console.ReadLine();
+                if (input == "1"){
+                    SleepNowCalculations.SleepNowCalculation();
+                }
+                else if (input == "2")
+                {
+                    Console.WriteLine("Enter your desired time to wake up at:");
+                    string? userTime = Console.ReadLine();
+                    WakeUpAtCalculations.WakeUp(userTime !);
+                }
+                else if (input == "3")
+                {
+                    Console.WriteLine("Enter your desired time to go to bed at");
+                    string? userTime = Console.ReadLine();
+                    SleepAtCalculations.SleepAt(userTime !);
+                }else
+                {
+                    Console.WriteLine("Please type in 1, 2 or 3");
+                }
+            }
         }
     }
 
